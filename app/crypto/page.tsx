@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ExternalLink, CreditCard, Wallet, Send } from "lucide-react";
+import { ExternalLink, CreditCard, Wallet, Send } from "lucide-react";
 import Image from "next/image";
 
 export default function CryptoPage() {
