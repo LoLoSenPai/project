@@ -17,10 +17,10 @@ export default function CryptoPage() {
       </section>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <Card className="border-2 border-purple-500/20 hover:border-purple-500/40 transition-colors">
+        <Card className="border-2 border-yellow-500/20 hover:border-yellow-500/40 transition-colors">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <CreditCard className="h-6 w-6 text-purple-500" />
+              <CreditCard className="h-6 w-6 text-yellow-500" />
               <span>Binance : La Plateforme d&apos;Échange</span>
             </CardTitle>
             <CardDescription>Première étape pour acheter des cryptos</CardDescription>
