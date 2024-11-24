@@ -8,7 +8,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NFT Guide - Votre guide dans le Web3",
+  title: "CRYPTO NOOB - Votre guide dans le Web3",
   description: "Découvrez le monde des NFTs, de la blockchain et du Web3",
 };
 
