@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, Layers, Shield, Globe } from "lucide-react";
+import InfoCard from "@/components/InfoCard";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,61 +20,39 @@ export default function Home() {
       {/* Cards Section */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Qu'est-ce que la Blockchain ? */}
-        <Card className="border-2 border-blue-500/20 hover:border-blue-500/40 transition-colors">
-          <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <Globe className="h-6 w-6 text-blue-500" />
-              <span>Qu&apos;est-ce que la Blockchain ?</span>
-            </CardTitle>
-            <CardDescription>Les fondamentaux de cette technologie révolutionnaire</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Image
-              src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800"
-              alt="Blockchain Illustration"
-              width={400}
-              height={200}
-              className="rounded-lg w-full object-cover"
-            />
-            <p className="text-sm text-muted-foreground">
-              La blockchain est une technologie de stockage et de transmission d&apos;informations transparente et sécurisée.
-              Elle fonctionne sans organe central de contrôle, à l&apos;image d&apos;un grand livre comptable public et infalsifiable.
-            </p>
-          </CardContent>
-        </Card>
+        <InfoCard
+          title="Qu'est-ce que la Blockchain ?"
+          description="Les fondamentaux de cette technologie révolutionnaire"
+          imageUrl="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800"
+        >
+          <p>
+            La blockchain est une technologie de stockage et de transmission d'informations transparente et sécurisée.
+            Elle fonctionne sans organe central de contrôle, à l'image d'un grand livre comptable public et infalsifiable.
+          </p>
+          <p>
+            L'intérêt principal de la blockchain réside dans sa capacité à garantir la décentralisation, la transparence,
+            et la sécurité des transactions. C'est une réponse technologique à la perte de confiance envers les systèmes centralisés.
+          </p>
+        </InfoCard>
 
-        {/* Commencez avec MetaMask */}
-        <Card className="border-2 border-green-500/20 hover:border-green-500/40 transition-colors">
-          <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-green-500" />
-              <span>Commencez avec MetaMask</span>
-            </CardTitle>
-            <CardDescription>Votre passerelle vers le Web3</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Image
-              src="/metamask2.webp"
-              alt="MetaMask"
-              width={400}
-              height={200}
-              className="rounded-lg w-full object-cover"
-            />
-            <p className="text-sm text-muted-foreground">
-              MetaMask est le portefeuille crypto le plus populaire pour accéder aux applications Web3.
-              Installez-le pour commencer votre voyage dans la blockchain.
-            </p>
-            <Button
-              className="w-full bg-gradient-to-r from-pink-500 via-blue-500 to-green-500 hover:from-pink-600 hover:via-blue-600 hover:to-green-600 text-orange-500"
-              asChild
-            >
-              <a href="https://metamask.io/download/" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-4 w-4 text-orange-500" />
-                Télécharger MetaMask
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
+        {/* Pourquoi les Crypto ? */}
+        <InfoCard
+          title="Pourquoi les Crypto ?"
+          description="Les raisons derrière l'essor des cryptomonnaies"
+          imageUrl="https://plus.unsplash.com/premium_photo-1681400668073-a1947604dd36?auto=format&fit=crop&q=80&w=800"
+        >
+          <p>
+            Les cryptomonnaies permettent de contourner les institutions financières traditionnelles qui agissent comme tiers de confiance.
+            Elles offrent une liberté financière et une souveraineté sur vos actifs.
+          </p>
+          <p>
+            La blockchain garantit une traçabilité et une immuabilité des transactions, réduisant ainsi le risque de fraude et de corruption.
+          </p>
+          <p>
+            L&apos;aspect philosophique des cryptos repose sur la volonté de créer un système financier plus juste, ouvert,
+            et accessible à tous, sans discrimination.
+          </p>
+        </InfoCard>
       </div>
 
       {/* Les Avantages de la Blockchain */}
@@ -87,35 +66,14 @@ export default function Home() {
         <CardContent>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              {
-                title: "Décentralisation",
-                description: "Pas d'autorité centrale, le pouvoir est distribué",
-              },
-              {
-                title: "Transparence",
-                description: "Toutes les transactions sont publiques et vérifiables",
-              },
-              {
-                title: "Sécurité",
-                description: "Cryptographie avancée pour protéger les données",
-              },
-              {
-                title: "Immutabilité",
-                description: "Les données ne peuvent pas être modifiées une fois enregistrées",
-              },
-              {
-                title: "Automatisation",
-                description: "Smart contracts pour automatiser les processus",
-              },
-              {
-                title: "Accessibilité",
-                description: "Accessible à tous, partout dans le monde",
-              },
+              { title: "Décentralisation", description: "Pas d'autorité centrale, le pouvoir est distribué" },
+              { title: "Transparence", description: "Toutes les transactions sont publiques et vérifiables" },
+              { title: "Sécurité", description: "Cryptographie avancée pour protéger les données" },
+              { title: "Immutabilité", description: "Les données ne peuvent pas être modifiées une fois enregistrées" },
+              { title: "Automatisation", description: "Smart contracts pour automatiser les processus" },
+              { title: "Accessibilité", description: "Accessible à tous, partout dans le monde" },
             ].map((item, index) => (
-              <div
-                key={index}
-                className="p-4 rounded-lg bg-gradient-to-r from-purple-500/5 to-blue-500/5"
-              >
+              <div key={index} className="p-4 rounded-lg bg-gradient-to-r from-purple-500/5 to-blue-500/5">
                 <h3 className="font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
@@ -123,6 +81,6 @@ export default function Home() {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </div >
   );
 }
